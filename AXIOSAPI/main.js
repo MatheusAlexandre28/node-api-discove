@@ -41,12 +41,23 @@ function updateUser(){
 
 // delete
 function deleteUser(){
-  axios.delete(`${url}`/21)
+  axios.delete(`${url}`/12)
   .then(response => {
     alert(JSON.stringify(response.data))
   })
   .catch(error => console.log(error))
 }
 
-deleteUser()
+// deleteUser()
+
+function getOneUser(){
+  axios.get(`${url}/8`)
+  .then(response => {
+    const data = response.data 
+    renderResults.textContent = JSON.stringify(data)
+  })
+  .catch(error => console.log(error))
+}
+
+getOneUser()
 
